@@ -3,7 +3,7 @@ class V1::WorkersController < ApplicationController
 
   # GET /workers
   def index
-    @workers = Worker.all
+    @workers = Worker.all.paginate(page: params[:page], per_page: 20)
     json_response(@workers)
   end
 
