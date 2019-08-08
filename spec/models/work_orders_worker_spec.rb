@@ -12,6 +12,6 @@ RSpec.describe WorkOrdersWorker, type: :model do
   end
 
   it 'cannot have 6 workers assigned to a single work order' do
-    expect {create(:work_order_with_workers, work_orders_workers_count: 6)}.to raise_error
+    expect {create(:work_order_with_workers, work_orders_workers_count: 6)}.to raise_error ActiveRecord::RecordInvalid
   end
 end
