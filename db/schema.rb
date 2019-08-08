@@ -10,31 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_134226) do
-
-  create_table "items", force: :cascade do |t|
-    t.string "name"
-    t.boolean "done"
-    t.integer "todo_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["todo_id"], name: "index_items_on_todo_id"
-  end
-
-  create_table "todos", force: :cascade do |t|
-    t.string "title"
-    t.string "created_by"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.text "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_08_08_140415) do
 
   create_table "work_orders", force: :cascade do |t|
     t.string "title"
@@ -42,6 +18,14 @@ ActiveRecord::Schema.define(version: 2019_08_08_134226) do
     t.datetime "deadline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "work_orders_workers", force: :cascade do |t|
+    t.integer "work_order_id", null: false
+    t.integer "worker_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_order_id", "worker_id"], name: "worker_orders_workers_by_keys", unique: true
   end
 
   create_table "workers", force: :cascade do |t|
