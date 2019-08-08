@@ -44,7 +44,7 @@ RSpec.describe 'Workers API', type: :request do
       end
 
       it 'returns a not found message' do
-        expect(response.body).to match(/Couldn't find WorkOrder/)
+        expect(response.body).to match(/Couldn't find Worker/)
       end
     end
   end
