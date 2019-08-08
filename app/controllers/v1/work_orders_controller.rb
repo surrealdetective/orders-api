@@ -3,7 +3,9 @@ class V1::WorkOrdersController < ApplicationController
 
   # GET /work_orders
   def index
-    @work_orders = WorkOrder.all.paginate(page: params[:page], per_page: 20)
+    @work_orders = WorkOrderFinder.
+      with_worker_id_or_by_deadline(params[:worker_id], params[:deadline]).
+      paginate(page: params[:page], per_page: 20)
     json_response(@work_orders)
   end
 
