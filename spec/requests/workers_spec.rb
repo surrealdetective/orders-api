@@ -37,7 +37,7 @@ RSpec.describe 'Workers API', type: :request do
     end
 
     context 'when the record does not exist' do
-      let(:worker_id) { 100 }
+      let(:worker_id) { 999999999 }
 
       it 'returns status code 404' do
         expect(response).to have_http_status(404)
