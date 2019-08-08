@@ -1,0 +1,2 @@
+class WorkOrdersController < ApplicationController
+end
