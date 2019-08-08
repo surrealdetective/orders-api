@@ -1,4 +1,4 @@
-class WorkOrdersController < ApplicationController
+class V1::WorkOrdersController < ApplicationController
   before_action :set_work_order, only: [:show, :update, :destroy]
 
   # GET /work_orders

@@ -1,4 +1,4 @@
-class WorkersController < ApplicationController
+class V1::WorkersController < ApplicationController
   before_action :set_worker, only: [:show, :update, :destroy]
 
   # GET /workers

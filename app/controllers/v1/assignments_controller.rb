@@ -1,4 +1,4 @@
-class AssignmentsController < ApplicationController
+class V1::AssignmentsController < ApplicationController
   def create
     @work_orders_worker = WorkOrdersWorker.create!(work_orders_workers_params)
     json_response(@work_orders_worker, :created)
