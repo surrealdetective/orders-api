@@ -18,7 +18,6 @@ class WorkOrderFinder
   def self.with_worker_id_or_by_deadline(worker_id=nil, deadline=nil, work_order_klass=WorkOrderFinder)
     deadline = deadline == 'true' ? true : deadline
     deadline = deadline == 'false' ? false : deadline
-
     if !worker_id.nil?
       order_by = case deadline
         when nil; 'deadline'
